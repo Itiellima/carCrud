@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -37,35 +37,27 @@
 <body>
 
 <form action="../view/update" method="POST" modelAttribute="car">
-	
+
+
+	<br>
 	<div class="container">
-		<br>
-		 ID:
-		 <br>
-		 <input type="text" name="id" th:value="${car.id}" readOnly="true">
-		 <br> 
-		 <br> 
-		 
-		 Marca carro:
-		 <br>
-		 <input type="text" name="marca" th:value="${car.marca}">
-		 <br>
-		 <br> 
-		 
-		 Modelo carro:
-		 <br>
-		 <input type="text" name="modelo" th:value="${car.modelo}">
-		 <br>
-		 <br>
-		 
-		 Ano carro:
-		 <br>
-		 <input type="text" name="ano" th:value="${car.ano}">
-		 <br>
-		 <br>
-		 
-		 <input type="submit" value="Atualizar">
-		 <input type="submit" class="btn btn-primary" value="Atualizar">
+		<div class="mb-3">
+			<label for="formGroupExampleInput" class="form-label">ID</label>
+			<input type="text" class="form-control" name="id" th:value="${car.id}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" readonly>
+		</div>
+		<div class="mb-3">
+			<label for="formGroupExampleInput" class="form-label">Marca</label>
+			<input type="text" class="form-control" name="marca" th:value="${car.marca}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" required>
+		</div>
+		<div class="mb-3">
+			<label for="formGroupExampleInput2" class="form-label">Modelo</label>
+			<input type="text" class="form-control" name="modelo" th:value="${car.modelo}" id="formGroupExampleInput2" placeholder="Digite o modelo do veiculo" required>
+		</div>
+		<div class="mb-3">
+			<label for="formGroupExampleInput3" class="form-label">Ano</label>
+			<input type="text" class="form-control" name="ano" th:value="${car.ano}" id="formGroupExampleInput3" placeholder="Digite o ano do veiculo" required>
+		</div>
+		<input type="submit" class="btn btn-primary" value="Atualizar">
 	</div>
 	 
 

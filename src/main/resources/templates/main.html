@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -10,90 +10,67 @@
 
    <title>Pagina de Carros</title>
 
-   <style>
-
-       table, th, td {
-
-           border: 1px solid black;
-
-           border-collapse: collapse;
-
-       }
-
-       body {
-
-           margin:16px;
-
-           padding:0
-
-       }
-
-   </style>
-
 </head>
 
 <body>
 
+<div th:replace="layout :: cabecalho"></div>
+
+
 <span th:if="${message != ''}">
-
    <div class="alert alert-success" role="alert">
-
        <span th:text="${message}" />
-
    </div>
-
 </span>
 
 <span th:if="${error != ''}">
-
    <div class="alert alert-danger" role="alert">
-
        <span th:text="${error}" />
-
    </div>
-
 </span>
 
-<a href="view/insert">Inserir novo</a> | <a href="/">Ver todos</a> 
-
-<br> <br>
-
-<table style="width:100%">
-
-   <tr>
-
-       <th>ID</th>
-
-       <th>Marca</th>
-
-       <th>Modelo</th>
-       
-       <th>Ano</th>
-
-       <th>Excluir?</th>
-
-       <th>Alterar?</th>
-
-   </tr>
 
 
-   <tr th:each="car : ${listCars}">
+<div class="container">
+    <br>
+    <div>
+        <a class="btn btn-primary" href="view/insert">Inserir novo</a> | <a class="btn btn-primary" href="/">Ver todos</a>
+    </div>
+    <br>
+    <div>
+        <table class="table table-hover">
 
-       <td th:text="${car.id}"></td>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Ação</th>
+                <!-- <th>Alterar?</th> -->
+            </tr>
 
-       <td th:text="${car.marca}"></td>
 
-       <td th:text="${car.modelo}"></td>
-       
-       <td th:text="${car.ano}"></td>
+            <tr th:each="car : ${listCars}">
 
-       <td><a th:href="@{/view/delete(id=${car.id})}">Deletar</a></td>
+                <td th:text="${car.id}"></td>
+                <td th:text="${car.marca}"></td>
+                <td th:text="${car.modelo}"></td>
+                <td th:text="${car.ano}"></td>
 
-       <td><a th:href="@{/view/update(id=${car.id})}">Alterar</a></td>
+                <td>
+                    <a th:href="@{/view/delete(id=${car.id})}">Deletar</a>
+                    <a th:href="@{/view/update(id=${car.id})}">Alterar</a>
+                </td>
+                <!-- <td><a th:href="@{/view/update(id=${car.id})}">Alterar</a></td> -->
 
-   </tr>
 
-</table>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
 
 </body>
 

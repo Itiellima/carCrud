@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -10,59 +10,29 @@
 
    <title>Inserir aluno</title>
 
-   <style>
-
-       table, th, td {
-
-           border: 1px solid black;
-
-           border-collapse: collapse;
-
-       }
-
-       body {
-
-           margin:16px;
-
-           padding:0
-
-       }
-
-   </style>
-
 </head>
 
 <body>
 
 <form action="../view/insert" method="POST" modelAttribute="aluno">
-
-   <div class="container">
-		 <br> 
-		 
-		 Marca carro:
-		 <br>
-		 <input type="text" name="marca" th:value="${car.marca}">
-		 <br>
-		 <br> 
-		 
-		 Modelo carro:
-		 <br>
-		 <input type="text" name="modelo" th:value="${car.modelo}">
-		 <br>
-		 <br>
-		 
-		 Ano carro:
-		 <br>
-		 <input type="text" name="ano" th:value="${car.ano}">
-		 <br>
-		 <br>
-		 
-		 <input type="submit" value="Incluir">
-		 <input type="submit" class="btn btn-primary" value="Atualizar">
+	<br>
+	<div class="container">
+		<div class="mb-3">
+			<label for="formGroupExampleInput" class="form-label">Marca</label>
+			<input type="text" class="form-control" name="marca" th:value="${car.marca}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" required>
+		</div>
+		<div class="mb-3">
+			<label for="formGroupExampleInput2" class="form-label">Modelo</label>
+			<input type="text" class="form-control" name="modelo" th:value="${car.modelo}" id="formGroupExampleInput2" placeholder="Digite o modelo do veiculo" required>
+		</div>
+		<div class="mb-3">
+			<label for="formGroupExampleInput3" class="form-label">Ano</label>
+			<input type="text" class="form-control" name="ano" th:value="${car.ano}" id="formGroupExampleInput3" placeholder="Digite o ano do veiculo" required>
+		</div>
+		<input type="submit" class="btn btn-primary" value="Incluir">
 	</div>
 
 </form>
-
 
 </body>
 
