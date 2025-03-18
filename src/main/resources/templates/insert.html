@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <meta charset="UTF-8">
+
+   <title>Inserir aluno</title>
+
+   <style>
+
+       table, th, td {
+
+           border: 1px solid black;
+
+           border-collapse: collapse;
+
+       }
+
+       body {
+
+           margin:16px;
+
+           padding:0
+
+       }
+
+   </style>
+
+</head>
+
+<body>
+
+<form action="../view/insert" method="POST" modelAttribute="aluno">
+
+   <div class="container">
+		 <br> 
+		 
+		 Marca carro:
+		 <br>
+		 <input type="text" name="marca" th:value="${car.marca}">
+		 <br>
+		 <br> 
+		 
+		 Modelo carro:
+		 <br>
+		 <input type="text" name="modelo" th:value="${car.modelo}">
+		 <br>
+		 <br>
+		 
+		 Ano carro:
+		 <br>
+		 <input type="text" name="ano" th:value="${car.ano}">
+		 <br>
+		 <br>
+		 
+		 <input type="submit" value="Incluir">
+		 <input type="submit" class="btn btn-primary" value="Atualizar">
+	</div>
+
+</form>
+
+
+</body>
+
+</html>

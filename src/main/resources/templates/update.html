@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	
+	<meta charset="UTF-8">
+
+ 	<title>Atualizar car</title>
+
+ 	<style>
+
+       table, th, td {
+
+           border: 1px solid black;
+
+           border-collapse: collapse;
+
+       }
+
+       body {
+
+           margin:16px;
+
+           padding:0
+
+       }
+
+   </style>
+</head>
+
+<body>
+
+<form action="../view/update" method="POST" modelAttribute="car">
+	
+	<div class="container">
+		<br>
+		 ID:
+		 <br>
+		 <input type="text" name="id" th:value="${car.id}" readOnly="true">
+		 <br> 
+		 <br> 
+		 
+		 Marca carro:
+		 <br>
+		 <input type="text" name="marca" th:value="${car.marca}">
+		 <br>
+		 <br> 
+		 
+		 Modelo carro:
+		 <br>
+		 <input type="text" name="modelo" th:value="${car.modelo}">
+		 <br>
+		 <br>
+		 
+		 Ano carro:
+		 <br>
+		 <input type="text" name="ano" th:value="${car.ano}">
+		 <br>
+		 <br>
+		 
+		 <input type="submit" value="Atualizar">
+		 <input type="submit" class="btn btn-primary" value="Atualizar">
+	</div>
+	 
+
+</form>
+
+
+</body>
+
+</html>
