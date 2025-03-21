@@ -13,25 +13,6 @@
 
  	<title>Atualizar car</title>
 
- 	<style>
-
-       table, th, td {
-
-           border: 1px solid black;
-
-           border-collapse: collapse;
-
-       }
-
-       body {
-
-           margin:16px;
-
-           padding:0
-
-       }
-
-   </style>
 </head>
 
 <body>
@@ -41,13 +22,15 @@
 
 	<br>
 	<div class="container">
+		<h1>Alterar informações</h1>
+		<label>Informe</label>
 		<div class="mb-3">
 			<label for="formGroupExampleInput" class="form-label">ID</label>
 			<input type="text" class="form-control" name="id" th:value="${car.id}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" readonly>
 		</div>
 		<div class="mb-3">
-			<label for="formGroupExampleInput" class="form-label">Marca</label>
-			<input type="text" class="form-control" name="marca" th:value="${car.marca}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" required>
+			<label for="formGroupExampleInput4" class="form-label">Marca</label>
+			<input type="text" class="form-control" name="marca" th:value="${car.marca}" id="formGroupExampleInput4" placeholder="Digite a marca do veiculo" required>
 		</div>
 		<div class="mb-3">
 			<label for="formGroupExampleInput2" class="form-label">Modelo</label>
@@ -57,7 +40,10 @@
 			<label for="formGroupExampleInput3" class="form-label">Ano</label>
 			<input type="text" class="form-control" name="ano" th:value="${car.ano}" id="formGroupExampleInput3" placeholder="Digite o ano do veiculo" required>
 		</div>
-		<input type="submit" class="btn btn-primary" value="Atualizar">
+		<div>
+			<input type="submit" class="btn btn-primary" value="Atualizar">
+			<a class="btn btn-primary" href="/">Retornar</a>
+		</div>
 	</div>
 	 
 

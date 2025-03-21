@@ -11,54 +11,34 @@
 
     <title>Deletar Carro</title>
 
-    <style>
-
-        table, th, td {
-
-            border: 1px solid black;
-
-            border-collapse: collapse;
-
-        }
-
-        body {
-
-            margin:16px;
-
-            padding:0
-
-        }
-
-    </style>
-
 </head>
 
 <body>
 <div class="container">
-    <h1>Deseja excluir esse carro?</h1>
+    <h1>Deseja deletar esse veiculo?</h1>
     <form action="../view/delete" method="POST" modelAttribute="car">
-
-        ID:<br>
-
-        <input type="text" name="id" th:value="${car.id}" readOnly="true"><br><br>
-
-        Marca:<br>
-
-        <input type="text" name="name" th:value="${car.marca}" readOnly="true"><br>
-
-        <br>
-
-        Modelo:<br>
-
-        <input type="text" name="email" th:value="${car.modelo}" readOnly="true"><br>
-
-        <br>
-
-        <input type="submit" value="Deletar">
-
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">ID</label>
+            <input type="text" class="form-control" name="id" th:value="${car.id}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Marca</label>
+            <input type="text" class="form-control" name="marca" th:value="${car.marca}" id="formGroupExampleInput" placeholder="Digite a marca do veiculo" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Modelo</label>
+            <input type="text" class="form-control" name="modelo" th:value="${car.modelo}" id="formGroupExampleInput2" placeholder="Digite o modelo do veiculo" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput3" class="form-label">Ano</label>
+            <input type="text" class="form-control" name="ano" th:value="${car.ano}" id="formGroupExampleInput3" placeholder="Digite o ano do veiculo" readonly>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Deletar">
+            <a class="btn btn-primary" href="/">Retornar</a>
+        </div>
     </form>
 </div>
-
 
 </body>
 
